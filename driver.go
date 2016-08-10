@@ -87,7 +87,7 @@ func (d glusterfsDriver) Path(r volume.Request) volume.Response {
 	return volume.Response{Mountpoint: d.mountpoint(r.Name)}
 }
 
-func (d glusterfsDriver) Mount(r volume.Request) volume.Response {
+func (d glusterfsDriver) Mount(r volume.MountRequest) volume.Response {
 	d.m.Lock()
 	defer d.m.Unlock()
 	m := d.mountpoint(r.Name)
